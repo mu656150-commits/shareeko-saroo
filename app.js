@@ -99,7 +99,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 /* Scroll Reveal */
-const revealElements = document.querySelectorAll('.section-header, .service-card, .work-card, .process-item, .about-quote, .about-text, .stat, .testimonial-card, .pricing-card, .contact-heading, .contact-text, .contact-glow, .contact-form, .footer-brand, .footer-links');
+const revealElements = document.querySelectorAll('.section-header, .service-card, .work-card, .process-item, .about-quote, .about-text, .stat, .testimonial-card, .pricing-card, .contact-heading, .contact-text, .contact-glow, .contact-form, .footer-brand, .footer-links, .why-card, .client-logo, .cta-content, .footer-brand-large, .footer-social');
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
