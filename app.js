@@ -99,7 +99,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 /* Scroll Reveal */
-const revealElements = document.querySelectorAll('.section-header, .service-card, .work-card, .process-item, .about-quote, .about-text, .stat, .testimonial-card, .pricing-card, .contact-heading, .contact-text, .contact-glow, .contact-form, .footer-brand, .footer-links, .why-card, .client-logo, .cta-content, .footer-brand-large, .footer-social');
+const revealElements = document.querySelectorAll('.section-header, .service-card, .work-card, .work-card-full, .process-item, .about-quote, .about-text, .stat, .testimonial-card, .pricing-card, .contact-heading, .contact-text, .contact-glow, .contact-form, .footer-brand, .footer-links, .why-card, .client-logo, .cta-content, .footer-brand-large, .footer-social, .filter-btn, .showcase-item, .case-card');
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -239,4 +239,69 @@ serviceCards.forEach(card => {
         serviceCards.forEach(c => c.style.zIndex = '1');
         card.style.zIndex = '2';
     });
+});
+
+/* Work Filters */
+const filterButtons = document.querySelectorAll('.filter-btn');
+const workCards = document.querySelectorAll('.work-card-full');
+
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        workCards.forEach(card => {
+            const categories = card.getAttribute('data-category');
+            if (filter === 'all' || categories.includes(filter)) {
+                card.classList.remove('hidden');
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            } else {
+                card.classList.add('hidden');
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+            }
+        });
+    });
+});
+
+/* Lightbox */
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+lightbox.innerHTML = `
+    <button class="lightbox-close">&times;</button>
+    <div class="lightbox-content">
+        <span class="lightbox-caption"></span>
+    </div>
+`;
+document.body.appendChild(lightbox);
+
+const lightboxContent = lightbox.querySelector('.lightbox-content');
+const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+document.querySelectorAll('.showcase-item').forEach(item => {
+    item.addEventListener('click', () => {
+        const text = item.textContent.trim();
+        lightboxContent.querySelector('span').textContent = text;
+        lightbox.classList.add('active');
+    });
+});
+
+lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+    }
 });
