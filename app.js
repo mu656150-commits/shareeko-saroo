@@ -284,8 +284,13 @@ const lightboxClose = lightbox.querySelector('.lightbox-close');
 
 document.querySelectorAll('.showcase-item').forEach(item => {
     item.addEventListener('click', () => {
-        const text = item.textContent.trim();
-        lightboxContent.querySelector('span').textContent = text;
+        const caption = item.getAttribute('data-caption') || item.textContent.trim();
+        const img = item.querySelector('img');
+        if (img) {
+            lightboxContent.innerHTML = `<img src="${img.src}" alt="${caption}" style="max-width: 90vw; max-height: 85vh; object-fit: contain;"><span class="lightbox-caption">${caption}</span>`;
+        } else {
+            lightboxContent.querySelector('span').textContent = caption;
+        }
         lightbox.classList.add('active');
     });
 });
