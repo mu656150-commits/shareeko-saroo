@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — SiteForge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">SITEFORGE</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta magnetic">Start a Project ↗</a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">08</span>
+                    <h1 class="section-title">FAQ</h1>
+                </div>
+                <p class="page-hero-subtitle">Answers to common questions about working with SiteForge.</p>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">What is your typical project timeline?</button>
+                        <div class="faq-answer">
+                            <p>Most projects take between 8–16 weeks depending on scope. A simple brochure site may take 4–6 weeks, while a complex e-commerce platform with custom features can take 4–6 months. We'll provide a detailed timeline during our initial consultation.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Do you work with clients outside of the US?</button>
+                        <div class="faq-answer">
+                            <p>Yes, we work with clients globally. Our team is distributed across New York, London, and Dubai, allowing us to serve clients across time zones with minimal overlap issues.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What is your pricing structure?</button>
+                        <div class="faq-answer">
+                            <p>We offer project-based pricing tailored to your needs. Our packages start at $10,000 for starter projects and scale based on complexity. We also offer retainer arrangements for ongoing support and maintenance.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Do you provide post-launch support?</button>
+                        <div class="faq-answer">
+                            <p>Absolutely. Every project includes a support period — 30 days for Starter, 90 days for Pro, and 12 months for Elite packages. We also offer ongoing maintenance and optimization retainers.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What technologies do you use?</button>
+                        <div class="faq-answer">
+                            <p>We use modern, scalable technologies including React, Next.js, Vue, Node.js, and headless CMS platforms like Sanity and Contentful. For e-commerce, we work with Shopify Plus and custom solutions. Our stack is chosen based on your specific requirements.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Can you work with our existing brand guidelines?</button>
+                        <div class="faq-answer">
+                            <p>Yes, we can work within existing brand guidelines or help you refine them. We believe great design should amplify your brand, not contradict it. We'll assess your current assets and recommend the best path forward.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do we get started?</button>
+                        <div class="faq-answer">
+                            <p>Simply reach out through our contact form or email us at hello@siteforge.studio. We'll schedule a discovery call to discuss your goals, timeline, and budget. From there, we'll prepare a tailored proposal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">SITEFORGE</a>
+                    <p>Premium digital experiences engineered to make brands impossible to ignore.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Web Design</a></li>
+                        <li><a href="services.html">Development</a></li>
+                        <li><a href="services.html">E-Commerce</a></li>
+                        <li><a href="services.html">AI Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> SiteForge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

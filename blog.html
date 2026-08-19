@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — SiteForge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">SITEFORGE</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta magnetic">Start a Project ↗</a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">09</span>
+                    <h1 class="section-title">Journal</h1>
+                </div>
+                <p class="page-hero-subtitle">Thoughts on design, development, and the future of digital experiences.</p>
+            </div>
+        </section>
+
+        <section class="blog">
+            <div class="container">
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);"></div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-meta">Design — Aug 2024</span>
+                            <h3>The Art of Luxury Web Design in 2024</h3>
+                            <p>How premium brands are redefining digital experiences through restraint, typography, and motion.</p>
+                            <a href="#" class="blog-link">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-placeholder" style="background: linear-gradient(135deg, #0f3460 0%, #533483 100%);"></div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-meta">Development — Jul 2024</span>
+                            <h3>Why Performance Is a Design Feature</h3>
+                            <p>Exploring how load times, smooth animations, and responsive behavior impact user perception and conversion.</p>
+                            <a href="#" class="blog-link">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-placeholder" style="background: linear-gradient(135deg, #1b1b2f 0%, #162447 100%);"></div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-meta">Strategy — Jun 2024</span>
+                            <h3>Crafting Brand Narratives Through Web</h3>
+                            <p>How storytelling and visual hierarchy combine to create memorable digital brand experiences.</p>
+                            <a href="#" class="blog-link">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-placeholder" style="background: linear-gradient(135deg, #2d1b2e 0%, #1f1f3a 100%);"></div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-meta">Technology — May 2024</span>
+                            <h3>The Rise of Immersive Web Experiences</h3>
+                            <p>From 3D product views to scroll-driven animations, how the web is becoming more experiential.</p>
+                            <a href="#" class="blog-link">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">SITEFORGE</a>
+                    <p>Premium digital experiences engineered to make brands impossible to ignore.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Web Design</a></li>
+                        <li><a href="services.html">Development</a></li>
+                        <li><a href="services.html">E-Commerce</a></li>
+                        <li><a href="services.html">AI Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> SiteForge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
