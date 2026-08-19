@@ -1,5 +1,46 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+/* Custom Cursor */
+const cursor = document.getElementById('cursor');
+const follower = document.getElementById('cursor-follower');
+let mouseX = 0;
+let mouseY = 0;
+let followerX = 0;
+let followerY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+});
+
+function animateFollower() {
+    followerX += (mouseX - followerX) * 0.15;
+    followerY += (mouseY - followerY) * 0.15;
+    follower.style.left = followerX + 'px';
+    follower.style.top = followerY + 'px';
+    requestAnimationFrame(animateFollower);
+}
+animateFollower();
+
+const hoverElements = document.querySelectorAll('a, button, .btn, .service-card, .work-card, .pricing-card, .testimonial-card, input, select, textarea');
+hoverElements.forEach(el => {
+    el.addEventListener('mouseenter', () => follower.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => follower.classList.remove('hovering'));
+});
+
+const viewElements = document.querySelectorAll('.work-image');
+viewElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        follower.classList.add('viewing');
+        follower.classList.remove('hovering');
+    });
+    el.addEventListener('mouseleave', () => {
+        follower.classList.remove('viewing');
+    });
+});
+
 /* FAQ Accordion */
 const faqItems = document.querySelectorAll('.faq-item');
 faqItems.forEach(item => {
