@@ -156,6 +156,43 @@ if (aboutSection) {
     statsObserver.observe(aboutSection);
 }
 
+/* Hero Stats Counter */
+const heroStats = document.querySelectorAll('.hero-stat-number');
+let heroStatsCounted = false;
+
+function animateHeroStats() {
+    if (heroStatsCounted) return;
+    heroStatsCounted = true;
+    
+    heroStats.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        const duration = 2000;
+        const startTime = performance.now();
+
+        function updateHeroStat(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(easeProgress * target);
+            stat.textContent = current;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateHeroStat);
+            } else {
+                stat.textContent = target;
+            }
+        }
+
+        setTimeout(() => {
+            requestAnimationFrame(updateHeroStat);
+        }, 1200);
+    });
+}
+
+window.addEventListener('load', () => {
+    setTimeout(animateHeroStats, 500);
+});
+
 /* Testimonial Drag Scroll */
 const track = document.getElementById('testimonial-track');
 let isDown = false;
